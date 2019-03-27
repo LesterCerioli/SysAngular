@@ -1,0 +1,64 @@
+﻿<div class="container" ng-controller="clienteCtrl">
+    <div class="panel panel-info">
+        <div class="panel-heading">Cadastro de Clientes</div>
+
+        <div class="panel-body">
+            <button type="button" class="btn btn-info" data-target="#AtualizarCliente" data-toggle="modal">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+        </div>
+        <table class="table table-bordered">
+            <thead style="background-color:lavenderblush">
+                <tr>
+                    <th class="text-center">Cód Cliente</th>
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">CPF CNPJ</th>
+                    <th class="text-center">Identidade</th>
+                    <th class="text-center">Razão Social</th>
+                    <th class="text-center">Tipo de Cliente</th>
+                    <th class="text-center">CEP</th>
+                    <th class="text-center">Endereço</th>
+                    <th class="text-center">Número</th>
+                    <th class="text-center">Bairro</th>
+                    <th class="text-center">Telefone</th>
+                    <th class="text-center">Celular</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Cidade</th>
+                    <th class="text-center">Estado</th>
+                    <th class="text-center">Ação</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="func in cliente">
+                    <td class="text-center">{{func.cli_cod}}</td>
+                    <td class="text-center">{{cli_nome}}</td>
+                    <td class="text-center">{{func.cli_cpfcnpj}}</td>
+                    <td class="text-center">{{cli_regie}}</td>
+                    <td class="text-center">{{cli_rsocial}}</td>
+                    <td class="text-center">{{func.cli_tipo}}</td>
+                    <td class="text-center">{{func.cli_cep}}</td>
+                    <td class="text-center">{{func.cli_endereco}}</td>
+                    <td class="text-center">{{func.cli_bairro}}</td>
+                    <td class="text-center">{{func.cli_fone}}</td>
+                    <td class="text-center">{{func.cli_cel}}</td>
+                    <td class="text-center">{{func.cli_email}}</td>
+                    <td class="text-center">{{func.cli_endnumero}}</td>
+                    <td class="text-center">{{func.cli_cidade}}</td>
+                    <td class="text-center">{{func.cli-estado}}</td>
+                    <td class="text-center" style="width: 200px;">
+                        <a href="#" class="btn btn-info">Atualizar</a>
+                        <a href="#" class="btn btn-danger">Excluir</a>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/AngularApp/Cliente/Module.js"></script>
+    <script src="~/AngularApp/Cliente/Service.js"></script>
+    <script src="~/AngularApp/Cliente/Controller.js"></script>
+
+
+}

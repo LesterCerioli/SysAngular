@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="erp_lcModelStoreContainer" CdmEntityContainer="erp_lcEntities">
+    <EntitySetMapping Name="categoria_chamado">
+      <EntityTypeMapping TypeName="erp_lcModel.categoria_chamado">
+        <MappingFragment StoreEntitySet="categoria_chamado">
+          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+          <ScalarProperty Name="cat_nome" ColumnName="cat_nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clientes">
+      <EntityTypeMapping TypeName="erp_lcModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
+          <ScalarProperty Name="cli_nome" ColumnName="cli_nome" />
+          <ScalarProperty Name="cli_cpfcnpj" ColumnName="cli_cpfcnpj" />
+          <ScalarProperty Name="cli_rgie" ColumnName="cli_rgie" />
+          <ScalarProperty Name="cli_rsocial" ColumnName="cli_rsocial" />
+          <ScalarProperty Name="cli_tipo" ColumnName="cli_tipo" />
+          <ScalarProperty Name="cli_cep" ColumnName="cli_cep" />
+          <ScalarProperty Name="cli_endereco" ColumnName="cli_endereco" />
+          <ScalarProperty Name="cli_bairro" ColumnName="cli_bairro" />
+          <ScalarProperty Name="cli_fone" ColumnName="cli_fone" />
+          <ScalarProperty Name="cli_cel" ColumnName="cli_cel" />
+          <ScalarProperty Name="cli_email" ColumnName="cli_email" />
+          <ScalarProperty Name="cli_endnumero" ColumnName="cli_endnumero" />
+          <ScalarProperty Name="cli_cidade" ColumnName="cli_cidade" />
+          <ScalarProperty Name="cli_estado" ColumnName="cli_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fornecedors">
+      <EntityTypeMapping TypeName="erp_lcModel.fornecedor">
+        <MappingFragment StoreEntitySet="fornecedor">
+          <ScalarProperty Name="for_cod" ColumnName="for_cod" />
+          <ScalarProperty Name="for_nome" ColumnName="for_nome" />
+          <ScalarProperty Name="for_rsocial" ColumnName="for_rsocial" />
+          <ScalarProperty Name="for_ie" ColumnName="for_ie" />
+          <ScalarProperty Name="for_cnpj" ColumnName="for_cnpj" />
+          <ScalarProperty Name="for_cep" ColumnName="for_cep" />
+          <ScalarProperty Name="for_endereco" ColumnName="for_endereco" />
+          <ScalarProperty Name="for_bairro" ColumnName="for_bairro" />
+          <ScalarProperty Name="for_fone" ColumnName="for_fone" />
+          <ScalarProperty Name="for_cel" ColumnName="for_cel" />
+          <ScalarProperty Name="for_email" ColumnName="for_email" />
+          <ScalarProperty Name="for_endnumero" ColumnName="for_endnumero" />
+          <ScalarProperty Name="for_cidade" ColumnName="for_cidade" />
+          <ScalarProperty Name="for_estado" ColumnName="for_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pagamentos">
+      <EntityTypeMapping TypeName="erp_lcModel.pagamento">
+        <MappingFragment StoreEntitySet="pagamentos">
+          <ScalarProperty Name="pgt_cod" ColumnName="pgt_cod" />
+          <ScalarProperty Name="pgt_credor" ColumnName="pgt_credor" />
+          <ScalarProperty Name="pgt_dtvenc" ColumnName="pgt_dtvenc" />
+          <ScalarProperty Name="pgt_dtpgt" ColumnName="pgt_dtpgt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subcategoria_chamado">
+      <EntityTypeMapping TypeName="erp_lcModel.subcategoria_chamado">
+        <MappingFragment StoreEntitySet="subcategoria_chamado">
+          <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
+          <ScalarProperty Name="scat_nome" ColumnName="scat_nome" />
+          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subcategoria2_chamado">
+      <EntityTypeMapping TypeName="erp_lcModel.subcategoria2_chamado">
+        <MappingFragment StoreEntitySet="subcategoria2_chamado">
+          <ScalarProperty Name="scat2_cod" ColumnName="scat2_cod" />
+          <ScalarProperty Name="scat2_nome" ColumnName="scat2_nome" />
+          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subcategoria3_chamado">
+      <EntityTypeMapping TypeName="erp_lcModel.subcategoria3_chamado">
+        <MappingFragment StoreEntitySet="subcategoria3_chamado">
+          <ScalarProperty Name="scat3_cod" ColumnName="scat3_cod" />
+          <ScalarProperty Name="scat2_nome" ColumnName="scat2_nome" />
+          <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

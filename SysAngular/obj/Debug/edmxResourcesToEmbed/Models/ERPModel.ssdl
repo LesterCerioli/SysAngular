@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="erp_lcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="categoria_chamado">
+    <Key>
+      <PropertyRef Name="cat_cod" />
+    </Key>
+    <Property Name="cat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cat_nome" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="cli_cod" />
+    </Key>
+    <Property Name="cli_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cli_nome" Type="varchar" MaxLength="95" />
+    <Property Name="cli_cpfcnpj" Type="varchar" MaxLength="95" />
+    <Property Name="cli_rgie" Type="varchar" MaxLength="95" />
+    <Property Name="cli_rsocial" Type="varchar" MaxLength="95" />
+    <Property Name="cli_tipo" Type="int" />
+    <Property Name="cli_cep" Type="varchar" MaxLength="20" />
+    <Property Name="cli_endereco" Type="varchar" MaxLength="95" />
+    <Property Name="cli_bairro" Type="varchar" MaxLength="95" />
+    <Property Name="cli_fone" Type="varchar" MaxLength="95" />
+    <Property Name="cli_cel" Type="varchar" MaxLength="95" />
+    <Property Name="cli_email" Type="varchar" MaxLength="95" />
+    <Property Name="cli_endnumero" Type="varchar" MaxLength="10" />
+    <Property Name="cli_cidade" Type="varchar" MaxLength="95" />
+    <Property Name="cli_estado" Type="varchar" MaxLength="95" />
+  </EntityType>
+  <EntityType Name="fornecedor">
+    <Key>
+      <PropertyRef Name="for_cod" />
+    </Key>
+    <Property Name="for_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="for_nome" Type="varchar" MaxLength="95" />
+    <Property Name="for_rsocial" Type="varchar" MaxLength="95" />
+    <Property Name="for_ie" Type="varchar" MaxLength="95" />
+    <Property Name="for_cnpj" Type="varchar" MaxLength="95" />
+    <Property Name="for_cep" Type="varchar" MaxLength="95" />
+    <Property Name="for_endereco" Type="varchar" MaxLength="95" />
+    <Property Name="for_bairro" Type="varchar" MaxLength="95" />
+    <Property Name="for_fone" Type="varchar" MaxLength="95" />
+    <Property Name="for_cel" Type="varchar" MaxLength="95" />
+    <Property Name="for_email" Type="varchar" MaxLength="95" />
+    <Property Name="for_endnumero" Type="varchar" MaxLength="95" />
+    <Property Name="for_cidade" Type="varchar" MaxLength="95" />
+    <Property Name="for_estado" Type="varchar" MaxLength="95" />
+  </EntityType>
+  <EntityType Name="pagamentos">
+    <Key>
+      <PropertyRef Name="pgt_cod" />
+    </Key>
+    <Property Name="pgt_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pgt_credor" Type="varchar" MaxLength="95" />
+    <Property Name="pgt_dtvenc" Type="date" />
+    <Property Name="pgt_dtpgt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="subcategoria_chamado">
+    <Key>
+      <PropertyRef Name="scat_cod" />
+    </Key>
+    <Property Name="scat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="scat_nome" Type="varchar" MaxLength="95" />
+    <Property Name="cat_cod" Type="int" />
+  </EntityType>
+  <EntityType Name="subcategoria2_chamado">
+    <Key>
+      <PropertyRef Name="scat2_cod" />
+    </Key>
+    <Property Name="scat2_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="scat2_nome" Type="varchar" MaxLength="95" />
+    <Property Name="cat_cod" Type="int" />
+  </EntityType>
+  <EntityType Name="subcategoria3_chamado">
+    <Key>
+      <PropertyRef Name="scat3_cod" />
+    </Key>
+    <Property Name="scat3_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="scat2_nome" Type="varchar" MaxLength="95" />
+    <Property Name="cat_cod" Type="int" />
+  </EntityType>
+  <EntityContainer Name="erp_lcModelStoreContainer">
+    <EntitySet Name="categoria_chamado" EntityType="Self.categoria_chamado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pagamentos" EntityType="Self.pagamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subcategoria_chamado" EntityType="Self.subcategoria_chamado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subcategoria2_chamado" EntityType="Self.subcategoria2_chamado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subcategoria3_chamado" EntityType="Self.subcategoria3_chamado" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

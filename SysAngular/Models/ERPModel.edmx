@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="erp_lcModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="categoria_chamado">
+          <Key>
+            <PropertyRef Name="cat_cod" />
+          </Key>
+          <Property Name="cat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cat_nome" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="cli_cod" />
+          </Key>
+          <Property Name="cli_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cli_nome" Type="varchar" MaxLength="95" />
+          <Property Name="cli_cpfcnpj" Type="varchar" MaxLength="95" />
+          <Property Name="cli_rgie" Type="varchar" MaxLength="95" />
+          <Property Name="cli_rsocial" Type="varchar" MaxLength="95" />
+          <Property Name="cli_tipo" Type="int" />
+          <Property Name="cli_cep" Type="varchar" MaxLength="20" />
+          <Property Name="cli_endereco" Type="varchar" MaxLength="95" />
+          <Property Name="cli_bairro" Type="varchar" MaxLength="95" />
+          <Property Name="cli_fone" Type="varchar" MaxLength="95" />
+          <Property Name="cli_cel" Type="varchar" MaxLength="95" />
+          <Property Name="cli_email" Type="varchar" MaxLength="95" />
+          <Property Name="cli_endnumero" Type="varchar" MaxLength="10" />
+          <Property Name="cli_cidade" Type="varchar" MaxLength="95" />
+          <Property Name="cli_estado" Type="varchar" MaxLength="95" />
+        </EntityType>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="for_cod" />
+          </Key>
+          <Property Name="for_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="for_nome" Type="varchar" MaxLength="95" />
+          <Property Name="for_rsocial" Type="varchar" MaxLength="95" />
+          <Property Name="for_ie" Type="varchar" MaxLength="95" />
+          <Property Name="for_cnpj" Type="varchar" MaxLength="95" />
+          <Property Name="for_cep" Type="varchar" MaxLength="95" />
+          <Property Name="for_endereco" Type="varchar" MaxLength="95" />
+          <Property Name="for_bairro" Type="varchar" MaxLength="95" />
+          <Property Name="for_fone" Type="varchar" MaxLength="95" />
+          <Property Name="for_cel" Type="varchar" MaxLength="95" />
+          <Property Name="for_email" Type="varchar" MaxLength="95" />
+          <Property Name="for_endnumero" Type="varchar" MaxLength="95" />
+          <Property Name="for_cidade" Type="varchar" MaxLength="95" />
+          <Property Name="for_estado" Type="varchar" MaxLength="95" />
+        </EntityType>
+        <EntityType Name="pagamentos">
+          <Key>
+            <PropertyRef Name="pgt_cod" />
+          </Key>
+          <Property Name="pgt_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pgt_credor" Type="varchar" MaxLength="95" />
+          <Property Name="pgt_dtvenc" Type="date" />
+          <Property Name="pgt_dtpgt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="subcategoria_chamado">
+          <Key>
+            <PropertyRef Name="scat_cod" />
+          </Key>
+          <Property Name="scat_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="scat_nome" Type="varchar" MaxLength="95" />
+          <Property Name="cat_cod" Type="int" />
+        </EntityType>
+        <EntityType Name="subcategoria2_chamado">
+          <Key>
+            <PropertyRef Name="scat2_cod" />
+          </Key>
+          <Property Name="scat2_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="scat2_nome" Type="varchar" MaxLength="95" />
+          <Property Name="cat_cod" Type="int" />
+        </EntityType>
+        <EntityType Name="subcategoria3_chamado">
+          <Key>
+            <PropertyRef Name="scat3_cod" />
+          </Key>
+          <Property Name="scat3_cod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="scat2_nome" Type="varchar" MaxLength="95" />
+          <Property Name="cat_cod" Type="int" />
+        </EntityType>
+        <EntityContainer Name="erp_lcModelStoreContainer">
+          <EntitySet Name="categoria_chamado" EntityType="Self.categoria_chamado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fornecedor" EntityType="Self.fornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pagamentos" EntityType="Self.pagamentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subcategoria_chamado" EntityType="Self.subcategoria_chamado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subcategoria2_chamado" EntityType="Self.subcategoria2_chamado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subcategoria3_chamado" EntityType="Self.subcategoria3_chamado" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="erp_lcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="categoria_chamado">
+          <Key>
+            <PropertyRef Name="cat_cod" />
+          </Key>
+          <Property Name="cat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cat_nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="cli_cod" />
+          </Key>
+          <Property Name="cli_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cli_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_cpfcnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_rgie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_tipo" Type="Int32" />
+          <Property Name="cli_cep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="cli_endereco" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_endnumero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="cli_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cli_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="fornecedor">
+          <Key>
+            <PropertyRef Name="for_cod" />
+          </Key>
+          <Property Name="for_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="for_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_ie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cep" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_endereco" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_endnumero" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="for_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="pagamento">
+          <Key>
+            <PropertyRef Name="pgt_cod" />
+          </Key>
+          <Property Name="pgt_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pgt_credor" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="pgt_dtvenc" Type="DateTime" Precision="0" />
+          <Property Name="pgt_dtpgt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="subcategoria_chamado">
+          <Key>
+            <PropertyRef Name="scat_cod" />
+          </Key>
+          <Property Name="scat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="scat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cat_cod" Type="Int32" />
+        </EntityType>
+        <EntityType Name="subcategoria2_chamado">
+          <Key>
+            <PropertyRef Name="scat2_cod" />
+          </Key>
+          <Property Name="scat2_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="scat2_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cat_cod" Type="Int32" />
+        </EntityType>
+        <EntityType Name="subcategoria3_chamado">
+          <Key>
+            <PropertyRef Name="scat3_cod" />
+          </Key>
+          <Property Name="scat3_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="scat2_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+          <Property Name="cat_cod" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="erp_lcEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categoria_chamado" EntityType="Self.categoria_chamado" />
+          <EntitySet Name="clientes" EntityType="Self.cliente" />
+          <EntitySet Name="fornecedors" EntityType="Self.fornecedor" />
+          <EntitySet Name="pagamentos" EntityType="Self.pagamento" />
+          <EntitySet Name="subcategoria_chamado" EntityType="Self.subcategoria_chamado" />
+          <EntitySet Name="subcategoria2_chamado" EntityType="Self.subcategoria2_chamado" />
+          <EntitySet Name="subcategoria3_chamado" EntityType="Self.subcategoria3_chamado" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="erp_lcModelStoreContainer" CdmEntityContainer="erp_lcEntities">
+          <EntitySetMapping Name="categoria_chamado">
+            <EntityTypeMapping TypeName="erp_lcModel.categoria_chamado">
+              <MappingFragment StoreEntitySet="categoria_chamado">
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+                <ScalarProperty Name="cat_nome" ColumnName="cat_nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clientes">
+            <EntityTypeMapping TypeName="erp_lcModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="cli_cod" ColumnName="cli_cod" />
+                <ScalarProperty Name="cli_nome" ColumnName="cli_nome" />
+                <ScalarProperty Name="cli_cpfcnpj" ColumnName="cli_cpfcnpj" />
+                <ScalarProperty Name="cli_rgie" ColumnName="cli_rgie" />
+                <ScalarProperty Name="cli_rsocial" ColumnName="cli_rsocial" />
+                <ScalarProperty Name="cli_tipo" ColumnName="cli_tipo" />
+                <ScalarProperty Name="cli_cep" ColumnName="cli_cep" />
+                <ScalarProperty Name="cli_endereco" ColumnName="cli_endereco" />
+                <ScalarProperty Name="cli_bairro" ColumnName="cli_bairro" />
+                <ScalarProperty Name="cli_fone" ColumnName="cli_fone" />
+                <ScalarProperty Name="cli_cel" ColumnName="cli_cel" />
+                <ScalarProperty Name="cli_email" ColumnName="cli_email" />
+                <ScalarProperty Name="cli_endnumero" ColumnName="cli_endnumero" />
+                <ScalarProperty Name="cli_cidade" ColumnName="cli_cidade" />
+                <ScalarProperty Name="cli_estado" ColumnName="cli_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fornecedors">
+            <EntityTypeMapping TypeName="erp_lcModel.fornecedor">
+              <MappingFragment StoreEntitySet="fornecedor">
+                <ScalarProperty Name="for_cod" ColumnName="for_cod" />
+                <ScalarProperty Name="for_nome" ColumnName="for_nome" />
+                <ScalarProperty Name="for_rsocial" ColumnName="for_rsocial" />
+                <ScalarProperty Name="for_ie" ColumnName="for_ie" />
+                <ScalarProperty Name="for_cnpj" ColumnName="for_cnpj" />
+                <ScalarProperty Name="for_cep" ColumnName="for_cep" />
+                <ScalarProperty Name="for_endereco" ColumnName="for_endereco" />
+                <ScalarProperty Name="for_bairro" ColumnName="for_bairro" />
+                <ScalarProperty Name="for_fone" ColumnName="for_fone" />
+                <ScalarProperty Name="for_cel" ColumnName="for_cel" />
+                <ScalarProperty Name="for_email" ColumnName="for_email" />
+                <ScalarProperty Name="for_endnumero" ColumnName="for_endnumero" />
+                <ScalarProperty Name="for_cidade" ColumnName="for_cidade" />
+                <ScalarProperty Name="for_estado" ColumnName="for_estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pagamentos">
+            <EntityTypeMapping TypeName="erp_lcModel.pagamento">
+              <MappingFragment StoreEntitySet="pagamentos">
+                <ScalarProperty Name="pgt_cod" ColumnName="pgt_cod" />
+                <ScalarProperty Name="pgt_credor" ColumnName="pgt_credor" />
+                <ScalarProperty Name="pgt_dtvenc" ColumnName="pgt_dtvenc" />
+                <ScalarProperty Name="pgt_dtpgt" ColumnName="pgt_dtpgt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subcategoria_chamado">
+            <EntityTypeMapping TypeName="erp_lcModel.subcategoria_chamado">
+              <MappingFragment StoreEntitySet="subcategoria_chamado">
+                <ScalarProperty Name="scat_cod" ColumnName="scat_cod" />
+                <ScalarProperty Name="scat_nome" ColumnName="scat_nome" />
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subcategoria2_chamado">
+            <EntityTypeMapping TypeName="erp_lcModel.subcategoria2_chamado">
+              <MappingFragment StoreEntitySet="subcategoria2_chamado">
+                <ScalarProperty Name="scat2_cod" ColumnName="scat2_cod" />
+                <ScalarProperty Name="scat2_nome" ColumnName="scat2_nome" />
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subcategoria3_chamado">
+            <EntityTypeMapping TypeName="erp_lcModel.subcategoria3_chamado">
+              <MappingFragment StoreEntitySet="subcategoria3_chamado">
+                <ScalarProperty Name="scat3_cod" ColumnName="scat3_cod" />
+                <ScalarProperty Name="scat2_nome" ColumnName="scat2_nome" />
+                <ScalarProperty Name="cat_cod" ColumnName="cat_cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

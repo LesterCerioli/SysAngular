@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="erp_lcModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="categoria_chamado">
+    <Key>
+      <PropertyRef Name="cat_cod" />
+    </Key>
+    <Property Name="cat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cat_nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="cli_cod" />
+    </Key>
+    <Property Name="cli_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cli_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_cpfcnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_rgie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_tipo" Type="Int32" />
+    <Property Name="cli_cep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cli_endereco" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_endnumero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="cli_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cli_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="fornecedor">
+    <Key>
+      <PropertyRef Name="for_cod" />
+    </Key>
+    <Property Name="for_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="for_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_rsocial" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_ie" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_cnpj" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_cep" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_endereco" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_bairro" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_fone" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_cel" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_email" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_endnumero" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_cidade" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="for_estado" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pagamento">
+    <Key>
+      <PropertyRef Name="pgt_cod" />
+    </Key>
+    <Property Name="pgt_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pgt_credor" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="pgt_dtvenc" Type="DateTime" Precision="0" />
+    <Property Name="pgt_dtpgt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="subcategoria_chamado">
+    <Key>
+      <PropertyRef Name="scat_cod" />
+    </Key>
+    <Property Name="scat_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="scat_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cat_cod" Type="Int32" />
+  </EntityType>
+  <EntityType Name="subcategoria2_chamado">
+    <Key>
+      <PropertyRef Name="scat2_cod" />
+    </Key>
+    <Property Name="scat2_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="scat2_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cat_cod" Type="Int32" />
+  </EntityType>
+  <EntityType Name="subcategoria3_chamado">
+    <Key>
+      <PropertyRef Name="scat3_cod" />
+    </Key>
+    <Property Name="scat3_cod" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="scat2_nome" Type="String" MaxLength="95" FixedLength="false" Unicode="false" />
+    <Property Name="cat_cod" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="erp_lcEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="categoria_chamado" EntityType="Self.categoria_chamado" />
+    <EntitySet Name="clientes" EntityType="Self.cliente" />
+    <EntitySet Name="fornecedors" EntityType="Self.fornecedor" />
+    <EntitySet Name="pagamentos" EntityType="Self.pagamento" />
+    <EntitySet Name="subcategoria_chamado" EntityType="Self.subcategoria_chamado" />
+    <EntitySet Name="subcategoria2_chamado" EntityType="Self.subcategoria2_chamado" />
+    <EntitySet Name="subcategoria3_chamado" EntityType="Self.subcategoria3_chamado" />
+  </EntityContainer>
+</Schema>
